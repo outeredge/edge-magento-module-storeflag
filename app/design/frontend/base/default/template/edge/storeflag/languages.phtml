@@ -24,8 +24,12 @@
 </div>
 <script type="text/javascript">
 //<![CDATA[
-    $$('.storeflag-switcher-active')[0].observe('click', function(){
+    $$('.storeflag-switcher-active')[0].observe('click', function(e){
+        e.stopPropagation();
         $$('.storeflag-switcher')[0].classList.toggle('open');
+    });
+    $(document).observe('click', function(){
+        $$('.storeflag-switcher')[0].removeClassName('open');
     });
 //]]>
 </script>

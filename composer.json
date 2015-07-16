@@ -1,0 +1,23 @@
+{
+    "name": "outeredge/edge-magento-module-storeflag",
+    "type": "magento-module",
+    "description": "Store Flag Image Module for Magento by outer/edge",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "outer/edge",
+            "email": "support@outeredgeuk.com"
+        }
+    ],
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    },
+    "extra": {
+        "map": [
+            ["app/code/local/Edge/StoreFlag", "app/code/local/Edge/StoreFlag"],
+            ["app/etc/modules/Edge_StoreFlag.xml", "app/etc/modules/Edge_StoreFlag.xml"],
+            ["app/design/frontend/base/default/template/edge/storeflag", "app/design/frontend/base/default/template/edge/storeflag"],
+            ["skin/frontend/base/default/template/edge/storeflag", "skin/frontend/base/default/template/edge/storeflag"]
+        ]
+    }
+}

@@ -1,0 +1,31 @@
+<?php if(count($this->getStores())>1): ?>
+<div class="form-language">
+    <label for="select-language"><?php echo $this->__('Your Language:') ?></label>
+    <div id="select-language" class="storeflag-switcher" title="<?php echo $this->__('Your Language') ?>">
+        <?php $store = Mage::app()->getStore() ?>
+        <a class="storeflag-switcher-active">
+            <?php if ($store->getFlag()): ?>
+                <img src="<?php echo Mage::getBaseUrl('media') . $store->getFlag() ?>" alt="<?php echo $this->escapeHtml($store->getName()) ?>">
+            <?php endif; ?>
+            <?php echo $this->escapeHtml($store->getName()) ?>
+        </a>
+        <div class="storeflag-switcher-dropdown">
+            <?php foreach ($this->getStores() as $_lang): ?>
+                <a href="<?php echo $_lang->getCurrentUrl() ?>">
+                    <?php if ($_lang->getFlag()): ?>
+                        <img src="<?php echo Mage::getBaseUrl('media') . $_lang->getFlag() ?>" alt="<?php echo $this->escapeHtml($_lang->getName()) ?>">
+                    <?php endif; ?>
+                    <?php echo $this->escapeHtml($_lang->getName()) ?>
+                </a>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+    $$('.storeflag-switcher-active')[0].observe('click', function(){
+        $$('.storeflag-switcher')[0].classList.toggle('open');
+    });
+//]]>
+</script>
+<?php endif; ?>

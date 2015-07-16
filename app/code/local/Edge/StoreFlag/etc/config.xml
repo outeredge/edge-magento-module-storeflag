@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Edge_StoreFlag>
+            <version>1.0.0</version>
+        </Edge_StoreFlag>
+    </modules>
+    <global>
+        <resources>
+            <storeflag_setup>
+                <setup>
+                    <module>Edge_StoreFlag</module>
+                </setup>
+            </storeflag_setup>
+        </resources>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <storeflag>
+                    <file>edge/storeflag.xml</file>
+                </storeflag>
+            </updates>
+        </layout>
+    </frontend>
+    <adminhtml>
+        <events>
+            <adminhtml_store_edit_form_prepare_form>
+                <observers>
+                    <storeflag_field>
+                        <class>Edge_StoreFlag_Model_Observer_Store</class>
+                        <method>addFlagField</method>
+                    </storeflag_field>
+                </observers>
+            </adminhtml_store_edit_form_prepare_form>
+            <store_save_before>
+                <observers>
+                    <storeflag_save>
+                        <class>Edge_StoreFlag_Model_Observer_Store</class>
+                        <method>saveFlag</method>
+                    </storeflag_save>
+                </observers>
+            </store_save_before>
+        </events>
+    </adminhtml>
+</config>

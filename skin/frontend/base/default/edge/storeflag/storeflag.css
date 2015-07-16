@@ -1,0 +1,10 @@
+.storeflag-switcher-dropdown{
+    display: none;
+    position: absolute;
+}
+.storeflag-switcher-dropdown > a{
+    display: block;
+}
+.storeflag-switcher.open .storeflag-switcher-dropdown{
+    display: block;
+}

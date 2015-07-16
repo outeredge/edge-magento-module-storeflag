@@ -9,7 +9,7 @@
         </reference>
         <reference name="store_language">
             <action method="setTemplate">
-                <template>storeflag/languages.phtml</template>
+                <template>edge/storeflag/languages.phtml</template>
             </action>
         </reference>
     </default>
